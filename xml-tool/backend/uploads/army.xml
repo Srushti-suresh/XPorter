@@ -1,0 +1,33 @@
+<CommunicationRecord>
+    <Document unitID="12345"/>
+    <DateTime>2025-08-04T10:30:00</DateTime>
+    <ISUMNo>56789</ISUMNo>
+    <To>ReceiverName</To>
+    <CommMode>Radio</CommMode>
+    <Link>LinkDetails</Link>
+    <Subject>
+        <KUI>ExampleKUI</KUI>
+        <SEDBand>ExampleSEDBand</SEDBand>
+    </Subject>
+    <SecurityClassification>Confidential</SecurityClassification>
+    <Unit>UnitName</Unit>
+    <StationTech>StationName</StationTech>
+    <Info>Additional information here</Info>
+    <Area>AreaName</Area>
+    <Layer>LayerType</Layer>
+    <Link2>SecondaryLinkInfo</Link2>
+    <CommFrom>OriginatingStation</CommFrom>
+    <Frequency>123.45 MHz</Frequency>
+    <CommTo>DestinationStation</CommTo>
+    <Precedence>High</Precedence>
+    <SpecialIR>SpecialInstructions</SpecialIR>
+    <Status>Active</Status>
+    <SourceDocDD>DocumentReference</SourceDocDD>
+    <EType>TypeValue</EType>
+    <OriginatedDetails>
+        <DateTime>2025-08-04T09:45:00</DateTime>
+        <Interception>Yes</Interception>
+        <TransHistory>Some history details</TransHistory>
+        <VerbalType>Command</VerbalType>
+    </OriginatedDetails>
+</CommunicationRecord>
