@@ -1,60 +1,81 @@
+<!-- frontend/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>XML to PostgreSQL Tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
       margin: 0;
-      padding: 40px;
+      padding: 0;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
+      height: 100vh;
     }
 
     .container {
-      background-color: #ffffff;
-      padding: 30px 40px;
+      background-color: white;
+      padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       width: 100%;
-      max-width: 500px;
+      max-width: 450px;
+      animation: fadeIn 0.5s ease-in-out;
     }
 
     h1 {
       margin-top: 0;
-      font-size: 24px;
+      font-size: 22px;
       text-align: center;
-      color: #343a40;
+      color: #333;
     }
 
     label {
-      font-weight: bold;
-      margin-bottom: 10px;
       display: block;
-      color: #495057;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .custom-file {
+      background: #f1f3f5;
+      border: 2px dashed #ccc;
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .custom-file:hover {
+      background: #e9ecef;
     }
 
     input[type="file"] {
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #ced4da;
-      width: 100%;
-      margin-bottom: 20px;
+      display: none;
     }
 
     button {
       background-color: #007bff;
+      color: white;
       border: none;
       padding: 12px 20px;
-      color: white;
       font-size: 16px;
       border-radius: 6px;
       cursor: pointer;
-      margin-right: 10px;
-      transition: background-color 0.3s;
+      width: 100%;
+      transition: 0.3s;
     }
 
     button:hover {
@@ -66,24 +87,30 @@
       font-size: 15px;
       color: #333;
       background: #e9ecef;
-      padding: 10px;
-      border-radius: 5px;
-      white-space: pre-wrap;
+      padding: 12px;
+      border-radius: 6px;
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>XML to PostgreSQL Tool</h1>
-    <label for="xmlFile">Select XML File</label>
-    <input type="file" id="xmlFile">
-    <div style="margin-top: 15px;">
-      <button onclick="uploadXML()">Upload XML</button>
-      <button onclick="downloadExcel()">Download Excel</button>
-    </div>
-    <p id="result"></p>
+    <h1>Upload XML File</h1>
+
+    <label for="xmlFile" class="custom-file" id="fileLabel">Click to choose XML file</label>
+    <input type="file" id="xmlFile" accept=".xml">
+
+    <button onclick="uploadXML()">Upload and Insert to DB</button>
+    <button onclick="downloadExcel()" style="margin-top: 10px;">Download as Excel</button>
+
+    <div id="result"></div>
   </div>
-  <pre id="result"></pre>
+
   <script src="script.js"></script>
 </body>
 </html>
