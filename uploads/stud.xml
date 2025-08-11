@@ -1,0 +1,12 @@
+<students>
+  <student>
+    <name>Srushti</name>
+    <age>21</age>
+    <branch>Data Science</branch>
+  </student>
+  <student>
+    <name>Aryan</name>
+    <age>22</age>
+    <branch>AI</branch>
+  </student>
+</students>
